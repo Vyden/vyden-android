@@ -12,6 +12,8 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
+    WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        WebView webView = (WebView) findViewById(R.id.webview);
+        webView = (WebView) findViewById(R.id.webview);
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -61,9 +63,16 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 
         //switch to bitbucket URL when it has been updated with the new VR scene
-        webView.loadUrl("http://andrewarpasi.com/vyden/?course=-L62Ur6nLSp470r1Iyk6&lecture=-L62V9b_SmlELZIZ8k71");
-        //webView.loadUrl("https://vyden.bitbucket.io");
+        //webView.loadUrl("http://andrewarpasi.com/vyden/?course=-L62Ur6nLSp470r1Iyk6&lecture=-L62V9b_SmlELZIZ8k71");
+        webView.loadUrl("https://vyden.bitbucket.io");
     }
 
-
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
