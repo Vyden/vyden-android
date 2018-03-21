@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
+        webView.clearCache(true);
         webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 
         //switch to bitbucket URL when it has been updated with the new VR scene
