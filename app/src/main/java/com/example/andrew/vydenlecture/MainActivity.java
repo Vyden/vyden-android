@@ -60,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 
-        //webView.loadUrl("http://andrewarpasi.com/vyden/?course=-L62Ur6nLSp470r1Iyk6&lecture=-L62V9b_SmlELZIZ8k71");
-        webView.loadUrl("https://vyden.bitbucket.io");
+        //switch to bitbucket URL when it has been updated with the new VR scene
+        webView.loadUrl("http://andrewarpasi.com/vyden/?course=-L62Ur6nLSp470r1Iyk6&lecture=-L62V9b_SmlELZIZ8k71");
+        //webView.loadUrl("https://vyden.bitbucket.io");
     }
 
 
